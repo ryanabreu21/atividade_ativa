@@ -18,6 +18,5 @@ class Reserva(models.Model):
     data_reserva = models.DateField()
 
     def __str__(self):
-        # Formata a data no formato desejado (d/m/Y)
         data_formatada = self.data_reserva.strftime("%d/%m/%Y")
         return f"{self.nome_cliente} - {data_formatada}"
