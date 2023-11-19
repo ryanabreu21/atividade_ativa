@@ -1,0 +1,23 @@
+<!-- app_padaria/templates/app_padaria/fazer_reserva.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer Reserva</title>
+</head>
+<body>
+    <h1>Fazer Reserva</h1>
+    
+    
+
+    {% block content %}
+    <h2>Fazer Reserva</h2>
+    <form method="post" action="{% url 'fazer_reserva' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Fazer Reserva</button>
+    </form>
+    {% endblock %}
+</body>
+</html>

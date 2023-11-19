@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalhes do Pedido</title>
+</head>
+<body>
+    <h1>Detalhes do Pedido</h1>
+    <p>ID do Pedido: {{ pedido.id }}</p>
+    <p>Nome do Cliente: {{ pedido.nome_cliente }}</p>
+    <p>Itens do Pedido: {{ pedido.itens_pedido }}</p>
+    <p>Data do Pedido: {{ pedido.data_hora_pedido|date:"d/m/Y H:i:s" }}</p>
+    <a href="{% url 'lista_pedidos' %}">Voltar para a lista de pedidos</a>
+</body>
+</html>
+

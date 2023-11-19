@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Seus cabeçalhos aqui -->
+</head>
+<body>
+    <h1>Lista de Pedidos</h1>
+    
+    {% block title %}Lista de Pedidos{% endblock %}
+
+    {% block content %}
+        {% if pedidos %}
+            <ul>
+                {% for pedido in pedidos %}
+                    <li>
+                        <a href="{% url 'detalhes_pedido' pedido.id %}">{{ pedido.nome_cliente }}</a> - {{ pedido.data_hora_pedido|date:"d/m/Y H:i:s" }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum pedido encontrado.</p>
+        {% endif %}
+    {% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+

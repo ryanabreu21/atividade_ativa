@@ -1,0 +1,23 @@
+<!-- app_padaria/templates/app_padaria/fazer_pedido.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer Pedido</title>
+</head>
+<body>
+    <h1>Fazer Pedido</h1>
+    <!-- Adicione o formulário para fazer um pedido aqui -->
+    
+
+    {% block content %}
+    <h2>Fazer Pedido</h2>
+    <form method="post" action="{% url 'fazer_pedido' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Fazer Pedido</button>
+    </form>
+    {% endblock %}
+</body>
+</html>
